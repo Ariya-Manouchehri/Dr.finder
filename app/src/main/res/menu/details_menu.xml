@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:icon="@drawable/ic_round_home_24" android:id="@+id/item_home" android:title="home" />
+    <item android:icon="@drawable/ic_round_search_24" android:id="@+id/item_search" android:title="search"/>
+    <item android:icon="@drawable/ic_round_person_24" android:id="@+id/item_profile" android:title="profile"/>
+</menu>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="com.example.drfinder.model.Schedules" />
+    </data>
+    <CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/select_bottom_details_appointment"
+        android:button="@null"
+        android:text="@{model.schedule}"
+        android:textSize="16sp"
+        android:layout_margin="10dp"
+        android:gravity="center">
+    </CheckBox>
+</layout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.drfinder.model.PopularDoctor" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_background_doctor"
+        android:layout_width="181dp"
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:strokeColor="#D6D6D6"
+        app:strokeWidth="1dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/boarder"
+                android:layout_width="157dp"
+                android:layout_height="157dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                app:cardBackgroundColor="#F3FCFF"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp" />
+
+            <ImageView
+                android:id="@+id/img_doctor"
+                SetImage="@{model.img_doctor}"
+                android:layout_width="157dp"
+                android:layout_height="157dp"
+                android:layout_alignBottom="@+id/boarder"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitCenter"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/boarder"
+                android:layout_alignLeft="@+id/boarder"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name_doctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.name_doctor}"
+                    android:textColor="#13191B"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/job_doctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="@{model.job_doctor}"
+                    android:textColor="#424749"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:progressTint="#FDD835"
+                        android:backgroundTint="#fff"
+                        android:rating="4.5" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9/5"
+                        android:textSize="12sp"
+                        android:textColor="#A6A6A6"
+                        android:layout_marginLeft="5dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
