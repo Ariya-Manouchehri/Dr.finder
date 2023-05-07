@@ -41,6 +41,7 @@ public class SignInFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         SignInFragmentEventListener listener = new SignInFragmentEventListener();
         viewModel = new ViewModelProvider(getActivity()).get(SignUpSignInViewModel.class);
         binding.setListener(listener);

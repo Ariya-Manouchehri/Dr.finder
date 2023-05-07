@@ -14,10 +14,19 @@
         android:id="@+id/searchFragment"
         android:name="com.example.drfinder.fragment.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_searchByDoctorNameFragment"
+            app:destination="@id/searchByDoctorNameFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.drfinder.fragment.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/searchByDoctorNameFragment"
+        android:name="com.example.drfinder.fragment.SearchByDoctorNameFragment"
+        android:label="fragment_search_by_doctor_name"
+        tools:layout="@layout/fragment_search_by_doctor_name" />
 </navigation>

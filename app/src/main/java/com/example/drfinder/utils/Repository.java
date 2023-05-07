@@ -91,5 +91,9 @@ public class Repository {
         liveData.setValue(BackEnd.getInstance().getDoctorSchedule());
         return liveData;
     }
-
+    public LiveData<List<PopularDoctor>> getAllDoctor(){
+        MutableLiveData liveData = new MutableLiveData();
+        liveData.setValue(BackEnd.getInstance().getAllDoctor());
+        return liveData;
+    }
 }

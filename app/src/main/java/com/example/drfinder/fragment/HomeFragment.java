@@ -65,6 +65,7 @@ public class HomeFragment extends Fragment implements PopularDoctorRecyclerview.
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         viewModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
         setOurDoctor();
         setPopularDoctor();
@@ -113,6 +114,7 @@ public class HomeFragment extends Fragment implements PopularDoctorRecyclerview.
         viewModel.getOurDoctor().observe(getViewLifecycleOwner(), ourDoctors -> {
             ourDoctorArrayList = (ArrayList<OurDoctor>) ourDoctors;
             ourDoctorAdapter.setOurDoctorArrayList(ourDoctorArrayList);
+
             binding.ourDoctorRecyclerview.setAdapter(ourDoctorAdapter);
             binding.ourDoctorRecyclerview.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         });
@@ -123,6 +125,7 @@ public class HomeFragment extends Fragment implements PopularDoctorRecyclerview.
         viewModel.getPopularDoctor().observe(getViewLifecycleOwner(), popularDoctors -> {
             popularDoctorArrayList = (ArrayList<PopularDoctor>) popularDoctors;
             popularDoctorAdapter.setPopularDoctorArrayList(popularDoctorArrayList);
+
             binding.popularDoctorRecyclerview.setAdapter(popularDoctorAdapter);
             binding.popularDoctorRecyclerview.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         });
@@ -132,6 +135,7 @@ public class HomeFragment extends Fragment implements PopularDoctorRecyclerview.
         viewModel.getHomeViewPager().observe(getViewLifecycleOwner(), homeViewPagers -> {
             homeViewPagerArrayList = homeViewPagers;
             homeViewPagerAdapter.setHomeViewPagerArrayList(homeViewPagerArrayList);
+
             binding.viewPager.setAdapter(homeViewPagerAdapter);
             binding.viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
                 @Override

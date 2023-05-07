@@ -77,20 +77,20 @@ public class BackEnd {
     }
 
     public int signInButtonPressed(String username, String password) {
-        if (username.contains(".") || username.contains("&") || username.contains("@") || username.contains(" ")) {
+        if (username.isEmpty() || username.contains(".") || username.contains("&") || username.contains("@") || username.contains(" ")) {
             return -1;
         }
-        if (password.contains(".") || password.contains("&") || password.contains("@") || password.contains(" ")) {
+        if (password.isEmpty() || password.contains(".") || password.contains("&") || password.contains("@") || password.contains(" ")) {
             return 0;
         }
         return 1;
     }
 
     public int signUpButtonPressed(String username, String password, String confirmPassword) {
-        if (username.contains(".") || username.contains("&") || username.contains("@") || username.contains(" ")) {
+        if (username.isEmpty() || username.contains(".") || username.contains("&") || username.contains("@") || username.contains(" ")) {
             return -1;
         }
-        if (password.contains(".") || password.contains("&") || password.contains("@") || password.contains(" ")) {
+        if (password.isEmpty() || password.contains(".") || password.contains("&") || password.contains("@") || password.contains(" ")) {
             return 0;
         }
         if (!password.equals(confirmPassword)) {
@@ -190,5 +190,7 @@ public class BackEnd {
         return jobSideArrayList;
     }
 
-
+    public ArrayList<PopularDoctor> getAllDoctor() {
+        return popularDoctorArrayList;
+    }
 }
