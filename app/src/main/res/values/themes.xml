@@ -15,4 +15,10 @@
 
         <item name="fontFamily">@font/inter_regular</item>
     </style>
+    <style name="Theme.Drfinder.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Drfinder.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Drfinder.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

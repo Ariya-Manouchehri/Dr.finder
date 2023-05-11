@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.util.Log;
 
 import com.example.drfinder.R;
+import com.example.drfinder.model.Appointment;
 import com.example.drfinder.model.HomeViewPager;
 import com.example.drfinder.model.JobSide;
 import com.example.drfinder.model.OurDoctor;
@@ -12,12 +13,14 @@ import com.example.drfinder.model.Schedules;
 import com.example.drfinder.model.WorkingHours;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BackEnd {
     private static BackEnd instance = null;
     ArrayList<PopularDoctor> popularDoctorArrayList = new ArrayList<>();
     ArrayList<WorkingHours> workingHoursArrayList = new ArrayList<>();
     ArrayList<Schedules> schedulesArrayList = new ArrayList<>();
+    ArrayList<Appointment> DoctorForUser = new ArrayList<>();
 
 
     public static synchronized BackEnd getInstance() {
@@ -32,17 +35,19 @@ public class BackEnd {
         popularDoctorArrayList.add(new PopularDoctor(2, Color.parseColor("#FEF5EB"), R.drawable.doctor2, "Dr.Ahmad Ahmadian", "Gastroenterology", 3.8f));
         popularDoctorArrayList.add(new PopularDoctor(3, Color.parseColor("#FEF5EB"), R.drawable.doctor3, "Dr.Mahdi Moghadam", "Gastroenterology", 5.8f));
         popularDoctorArrayList.add(new PopularDoctor(4, Color.parseColor("#FEF5EB"), R.drawable.doctor4, "Dr.Saba Nazari", "physiotherapy", 9.8f));
-        popularDoctorArrayList.add(new PopularDoctor(5, Color.parseColor("#EFEFFB"), R.drawable.doctor5, "Dr.Mohammad Fazli", "Cardiology", 9.5f));
+        popularDoctorArrayList.add(new PopularDoctor(5, Color.parseColor("#EFEFFB"), R.drawable.doctor5, "Dr.Mohammad Fazli", "Cardiology", 5.5f));
         popularDoctorArrayList.add(new PopularDoctor(6, Color.parseColor("#FEF5EB"), R.drawable.doctor6, "Dr.Mostafa Rezaei", "Dentist", 8.7f));
         popularDoctorArrayList.add(new PopularDoctor(7, Color.parseColor("#EFEFFB"), R.drawable.doctor7, "Dr.Ariya Manouchehri", "Dentist", 8.2f));
         popularDoctorArrayList.add(new PopularDoctor(8, Color.parseColor("#FEF5EB"), R.drawable.doctor8, "Dr.Javad javadi", "Ophthalmology", 7.5f));
-        popularDoctorArrayList.add(new PopularDoctor(9, Color.parseColor("#FEF5EB"), R.drawable.doctor9, "Dr.Shamim Tabatabayian", "Dentist", 7.2f));
+        popularDoctorArrayList.add(new PopularDoctor(9, Color.parseColor("#FEF5EB"), R.drawable.doctor9, "Dr.Shamim Tabatabayian", "Dentist", 8.5f));
         popularDoctorArrayList.add(new PopularDoctor(10, Color.parseColor("#EFEFFB"), R.drawable.doctor10, "Dr.Reza Mohammadi", "Neurosurgery", 7.2f));
-        popularDoctorArrayList.add(new PopularDoctor(11, Color.parseColor("#FEF5EB"), R.drawable.doctor11, "Dr.Sara Ashkani", "Midwifery", 7f));
+        popularDoctorArrayList.add(new PopularDoctor(11, Color.parseColor("#FEF5EB"), R.drawable.doctor11, "Dr.Sara Ashkani", "Midwifery", 7.8f));
         popularDoctorArrayList.add(new PopularDoctor(12, Color.parseColor("#EFEFFB"), R.drawable.doctor12, "Dr.Maryam Shahbazi", "Ophthalmology", 6.8f));
         popularDoctorArrayList.add(new PopularDoctor(13, Color.parseColor("#FEF5EB"), R.drawable.doctor13, "Dr.Masome Heydari", "Radiologie", 6.5f));
         popularDoctorArrayList.add(new PopularDoctor(14, Color.parseColor("#FEF5EB"), R.drawable.doctor14, "Dr.Komail Moghadasi", "physiotherapy", 6.5f));
         popularDoctorArrayList.add(new PopularDoctor(15, Color.parseColor("#FEF5EB"), R.drawable.doctor15, "Dr.Sara Bahrami", "physiotherapy", 4.3f));
+        popularDoctorArrayList.add(new PopularDoctor(16, Color.parseColor("#FEF5EB"), R.drawable.doctor16, "Dr.Reza Asadipour", "Neurosurgery", 10f));
+
         for (int i = 7; i < 13; i++) {
             workingHoursArrayList.add(new WorkingHours(i+":00"+" AM"));
         }
@@ -193,4 +198,15 @@ public class BackEnd {
     public ArrayList<PopularDoctor> getAllDoctor() {
         return popularDoctorArrayList;
     }
+
+    public Integer setDoctorForUser(Appointment appointment) {
+        DoctorForUser.add(appointment);
+        return 1;
+    }
+    public List<Appointment> getAppointmentList() {
+        return DoctorForUser;
+
+    }
+
+
 }

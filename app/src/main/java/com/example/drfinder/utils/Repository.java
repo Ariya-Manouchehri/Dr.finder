@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.drfinder.backend.BackEnd;
+import com.example.drfinder.model.Appointment;
 import com.example.drfinder.model.HomeViewPager;
 import com.example.drfinder.model.JobSide;
 import com.example.drfinder.model.OurDoctor;
@@ -96,4 +97,15 @@ public class Repository {
         liveData.setValue(BackEnd.getInstance().getAllDoctor());
         return liveData;
     }
+    public LiveData<Integer> setDoctorForUser(Appointment appointment){
+        MutableLiveData liveData = new MutableLiveData();
+        liveData.setValue(BackEnd.getInstance().setDoctorForUser(appointment));
+        return liveData;
+    }
+    public LiveData<List<Appointment>> getAppointmentList(){
+        MutableLiveData liveData = new MutableLiveData();
+        liveData.setValue(BackEnd.getInstance().getAppointmentList());
+        return liveData;
+    }
+
 }

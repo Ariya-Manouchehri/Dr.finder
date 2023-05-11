@@ -1,6 +1,7 @@
 package com.example.drfinder.adapter;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -43,11 +44,19 @@ public class ScheduleRecyclerview extends RecyclerView.Adapter<ScheduleRecyclerv
         public Holder(@NonNull ItemScedulesBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+            binding.ViewSchedules.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null && RecyclerView.NO_POSITION != getAdapterPosition()) {
+                        listener.setOnCLickListener(schedulesArrayList.get(getAdapterPosition()).getSchedule());
+                    }
+                }
+            });
         }
     }
 
     public interface setOnClickListener {
-        void setOnCLickListener(int id);
+        void setOnCLickListener(String schedule);
     }
 
     public void setWorkingHoursArrayList( ArrayList<Schedules> schedulesArrayList) {

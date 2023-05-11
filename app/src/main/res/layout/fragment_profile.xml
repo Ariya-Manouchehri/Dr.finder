@@ -3,7 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragment.ProfileFragment">
-
+<data>
+    <variable
+        name="listener"
+        type="com.example.drfinder.fragment.ProfileFragment.ProfileFragmentEventListener" />
+</data>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -58,7 +62,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    app:cardElevation="2dp">
+                    app:cardElevation="2dp"
+                    android:onClick="@{listener::appointmentBtn}">
 
                     <RelativeLayout
                         android:layout_width="match_parent"

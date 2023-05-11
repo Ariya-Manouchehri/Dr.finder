@@ -1,5 +1,6 @@
 package com.example.drfinder.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.drfinder.R;
+import com.example.drfinder.activity.DoctorActivity;
 import com.example.drfinder.adapter.SearchByDoctorRecyclerview;
 import com.example.drfinder.databinding.FragmentSearchByDoctorNameBinding;
 import com.example.drfinder.model.PopularDoctor;
@@ -25,7 +27,7 @@ import com.example.drfinder.viewmodel.SearchViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchByDoctorNameFragment extends Fragment {
+public class SearchByDoctorNameFragment extends Fragment implements SearchByDoctorRecyclerview.setOnClickListener {
     FragmentSearchByDoctorNameBinding binding;
     SearchViewModel viewModel;
     SearchByDoctorRecyclerview searchByDoctorRecyclerview = new SearchByDoctorRecyclerview();
@@ -87,5 +89,13 @@ public class SearchByDoctorNameFragment extends Fragment {
 
             }
         });
+        searchByDoctorRecyclerview.setOnItemCLickListener(this);
+    }
+
+    @Override
+    public void setOnCLickListener(int id) {
+        Intent intent = new Intent(getContext(), DoctorActivity.class);
+        intent.putExtra("id", id);
+        startActivity(intent);
     }
 }

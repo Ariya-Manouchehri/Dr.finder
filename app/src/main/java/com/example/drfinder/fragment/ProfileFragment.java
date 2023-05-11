@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -44,6 +45,8 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         viewModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
+        ProfileFragmentEventListener listener = new ProfileFragmentEventListener();
+        binding.setListener(listener);
 
         viewModel.getPopularDoctor().observe(getViewLifecycleOwner(), popularDoctors -> {
             popularDoctorArrayList = (ArrayList<PopularDoctor>) popularDoctors;
@@ -51,5 +54,11 @@ public class ProfileFragment extends Fragment {
             binding.profileRecyclerView.setAdapter(popularDoctorAdapter);
             binding.profileRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         });
+    }
+
+    public class ProfileFragmentEventListener{
+        public void appointmentBtn(View view){
+            Navigation.findNavController(view).navigate(ProfileFragmentDirections.actionProfileFragmentToAppointmentListFragment());
+        }
     }
 }

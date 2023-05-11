@@ -23,10 +23,19 @@
         android:id="@+id/profileFragment"
         android:name="com.example.drfinder.fragment.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_appointmentListFragment"
+            app:destination="@id/appointmentListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchByDoctorNameFragment"
         android:name="com.example.drfinder.fragment.SearchByDoctorNameFragment"
         android:label="fragment_search_by_doctor_name"
         tools:layout="@layout/fragment_search_by_doctor_name" />
+    <fragment
+        android:id="@+id/appointmentListFragment"
+        android:name="com.example.drfinder.fragment.AppointmentListFragment"
+        android:label="fragment_appointment_list"
+        tools:layout="@layout/fragment_appointment_list" />
 </navigation>

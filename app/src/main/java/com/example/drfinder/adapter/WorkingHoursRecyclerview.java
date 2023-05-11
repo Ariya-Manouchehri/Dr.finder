@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.drfinder.R;
+import com.example.drfinder.activity.AppointmentActivity;
 import com.example.drfinder.databinding.ItemDoctorListRecyclerviewBinding;
 import com.example.drfinder.databinding.ItemWorkingHoursBinding;
 import com.example.drfinder.model.PopularDoctor;
@@ -38,17 +39,26 @@ public class WorkingHoursRecyclerview extends RecyclerView.Adapter<WorkingHoursR
         return workingHoursArrayList.size();
     }
 
+
     class Holder extends RecyclerView.ViewHolder {
         ItemWorkingHoursBinding binding;
 
         public Holder(@NonNull ItemWorkingHoursBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+            binding.ViewWorkingHours.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null && RecyclerView.NO_POSITION != getAdapterPosition()) {
+                        listener.setOnCLickListener(workingHoursArrayList.get(getAdapterPosition()).getHours());
+                    }
+                }
+            });
         }
     }
 
     public interface setOnClickListener {
-        void setOnCLickListener(int id);
+        void setOnCLickListener(String hours);
     }
 
     public void setWorkingHoursArrayList( ArrayList<WorkingHours> workingHoursArrayList) {

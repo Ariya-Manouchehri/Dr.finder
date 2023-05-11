@@ -7,6 +7,7 @@
     </data>
     <CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ViewSchedules"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/select_bottom_details_appointment"
