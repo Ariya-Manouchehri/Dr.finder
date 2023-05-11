@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.drfinder.model.Appointment;
-import com.example.drfinder.model.PopularDoctor;
+import com.example.drfinder.model.Doctor;
 import com.example.drfinder.model.Schedules;
 import com.example.drfinder.model.WorkingHours;
 import com.example.drfinder.utils.Repository;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DoctorActivityViewModel extends ViewModel {
 
-    public LiveData<PopularDoctor> getDoctor(int id){
+    public LiveData<Doctor> getDoctor(int id){
         return Repository.getInstance().getDoctor(id);
     }
 

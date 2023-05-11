@@ -5,10 +5,10 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.drfinder.backend.BackEnd;
 import com.example.drfinder.model.Appointment;
+import com.example.drfinder.model.Doctor;
 import com.example.drfinder.model.HomeViewPager;
 import com.example.drfinder.model.JobSide;
 import com.example.drfinder.model.OurDoctor;
-import com.example.drfinder.model.PopularDoctor;
 import com.example.drfinder.model.Schedules;
 import com.example.drfinder.model.WorkingHours;
 
@@ -25,7 +25,7 @@ public class Repository {
         return instance;
     }
 
-    public LiveData<List<PopularDoctor>> getPopularDoctor() {
+    public LiveData<List<Doctor>> getPopularDoctor() {
         MutableLiveData liveData = new MutableLiveData();
         liveData.setValue(BackEnd.getInstance().getPopularDoctor());
         return liveData;
@@ -42,7 +42,7 @@ public class Repository {
         liveData.setValue(BackEnd.getInstance().getHomeViewPager());
         return liveData;
     }
-    public LiveData<PopularDoctor> getDoctor(int id){
+    public LiveData<Doctor> getDoctor(int id){
         MutableLiveData liveData = new MutableLiveData();
         liveData.setValue(BackEnd.getInstance().getDoctor(id));
         return liveData;
@@ -54,7 +54,7 @@ public class Repository {
         return liveData;
     }
 
-    public LiveData<List<PopularDoctor>> getAllPopularDoctor(){
+    public LiveData<List<Doctor>> getAllPopularDoctor(){
         MutableLiveData liveData = new MutableLiveData();
         liveData.setValue(BackEnd.getInstance().getAllPopularDoctor());
         return liveData;
@@ -71,13 +71,13 @@ public class Repository {
         liveData.setValue(BackEnd.getInstance().signUpButtonPressed(username,password,confirmPassword));
         return liveData;
     }
-    public LiveData<List<PopularDoctor>> getDoctorByCategory(String job_side){
+    public LiveData<List<Doctor>> getDoctorByCategory(String job_side){
         MutableLiveData liveData = new MutableLiveData();
         liveData.setValue(BackEnd.getInstance().getDoctorByCategory(job_side));
         return liveData;
     }
 
-    public LiveData<List<PopularDoctor>> getFilterDoctor(String job_side){
+    public LiveData<List<Doctor>> getFilterDoctor(String job_side){
         MutableLiveData liveData = new MutableLiveData();
         liveData.setValue(BackEnd.getInstance().getFilterDoctor(job_side));
         return liveData;
@@ -92,7 +92,7 @@ public class Repository {
         liveData.setValue(BackEnd.getInstance().getDoctorSchedule());
         return liveData;
     }
-    public LiveData<List<PopularDoctor>> getAllDoctor(){
+    public LiveData<List<Doctor>> getAllDoctor(){
         MutableLiveData liveData = new MutableLiveData();
         liveData.setValue(BackEnd.getInstance().getAllDoctor());
         return liveData;

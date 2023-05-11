@@ -21,7 +21,7 @@ import com.example.drfinder.R;
 import com.example.drfinder.activity.DoctorActivity;
 import com.example.drfinder.adapter.SearchByDoctorRecyclerview;
 import com.example.drfinder.databinding.FragmentSearchByDoctorNameBinding;
-import com.example.drfinder.model.PopularDoctor;
+import com.example.drfinder.model.Doctor;
 import com.example.drfinder.viewmodel.SearchViewModel;
 
 import java.util.ArrayList;
@@ -31,8 +31,8 @@ public class SearchByDoctorNameFragment extends Fragment implements SearchByDoct
     FragmentSearchByDoctorNameBinding binding;
     SearchViewModel viewModel;
     SearchByDoctorRecyclerview searchByDoctorRecyclerview = new SearchByDoctorRecyclerview();
-    ArrayList<PopularDoctor> allDoctor = new ArrayList<>();
-    ArrayList<PopularDoctor> filterDoctor = new ArrayList<>();
+    ArrayList<Doctor> allDoctor = new ArrayList<>();
+    ArrayList<Doctor> filterDoctor = new ArrayList<>();
 
 
     public SearchByDoctorNameFragment() {
@@ -52,10 +52,10 @@ public class SearchByDoctorNameFragment extends Fragment implements SearchByDoct
         super.onViewCreated(view, savedInstanceState);
         viewModel = new ViewModelProvider(getActivity()).get(SearchViewModel.class);
 
-        viewModel.getAllDoctor().observe(getViewLifecycleOwner(), new Observer<List<PopularDoctor>>() {
+        viewModel.getAllDoctor().observe(getViewLifecycleOwner(), new Observer<List<Doctor>>() {
             @Override
-            public void onChanged(List<PopularDoctor> popularDoctors) {
-                allDoctor = (ArrayList<PopularDoctor>) popularDoctors;
+            public void onChanged(List<Doctor> popularDoctors) {
+                allDoctor = (ArrayList<Doctor>) popularDoctors;
                 searchByDoctorRecyclerview.setDoctorListArrayList(allDoctor);
                 binding.recyclerViewSearchByDoctorName.setAdapter(searchByDoctorRecyclerview);
                 binding.recyclerViewSearchByDoctorName.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
@@ -72,7 +72,7 @@ public class SearchByDoctorNameFragment extends Fragment implements SearchByDoct
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.length() > 0) {
                     filterDoctor.clear();
-                    for (PopularDoctor doctor : allDoctor) {
+                    for (Doctor doctor : allDoctor) {
                         if (doctor.getName_doctor().toLowerCase().contains(s)) {
                             filterDoctor.add(doctor);
                         }

@@ -3,9 +3,9 @@ package com.example.drfinder.model;
 public class Appointment {
     String schedule;
     String hours;
-    PopularDoctor doctor;
+    Doctor doctor;
 
-    public Appointment(String schedule, String hours, PopularDoctor doctor) {
+    public Appointment(String schedule, String hours, Doctor doctor) {
         this.schedule = schedule;
         this.hours = hours;
         this.doctor = doctor;
@@ -27,11 +27,11 @@ public class Appointment {
         this.hours = hours;
     }
 
-    public PopularDoctor getDoctor() {
+    public Doctor getDoctor() {
         return doctor;
     }
 
-    public void setDoctor(PopularDoctor doctor) {
+    public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
     }
 }

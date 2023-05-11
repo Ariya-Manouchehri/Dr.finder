@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Handler;
@@ -24,9 +23,9 @@ import com.example.drfinder.activity.OurDoctorListActivity;
 import com.example.drfinder.adapter.HomeViewPagerAdapter;
 import com.example.drfinder.adapter.OurDoctorRecyclerview;
 import com.example.drfinder.databinding.FragmentHomeBinding;
+import com.example.drfinder.model.Doctor;
 import com.example.drfinder.model.HomeViewPager;
 import com.example.drfinder.model.OurDoctor;
-import com.example.drfinder.model.PopularDoctor;
 import com.example.drfinder.adapter.PopularDoctorRecyclerview;
 import com.example.drfinder.viewmodel.HomeViewModel;
 
@@ -42,7 +41,7 @@ public class HomeFragment extends Fragment implements PopularDoctorRecyclerview.
     HomeViewModel viewModel;
 
     PopularDoctorRecyclerview popularDoctorAdapter = new PopularDoctorRecyclerview();
-    ArrayList<PopularDoctor> popularDoctorArrayList = new ArrayList<>();
+    ArrayList<Doctor> popularDoctorArrayList = new ArrayList<>();
 
     OurDoctorRecyclerview ourDoctorAdapter = new OurDoctorRecyclerview();
     ArrayList<OurDoctor> ourDoctorArrayList = new ArrayList<>();
@@ -123,7 +122,7 @@ public class HomeFragment extends Fragment implements PopularDoctorRecyclerview.
 
     private void setPopularDoctor() {
         viewModel.getPopularDoctor().observe(getViewLifecycleOwner(), popularDoctors -> {
-            popularDoctorArrayList = (ArrayList<PopularDoctor>) popularDoctors;
+            popularDoctorArrayList = (ArrayList<Doctor>) popularDoctors;
             popularDoctorAdapter.setPopularDoctorArrayList(popularDoctorArrayList);
 
             binding.popularDoctorRecyclerview.setAdapter(popularDoctorAdapter);

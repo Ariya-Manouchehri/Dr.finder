@@ -6,14 +6,11 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 
 import com.example.drfinder.R;
 import com.example.drfinder.databinding.ActivityDoctorBinding;
-import com.example.drfinder.fragment.SignInFragmentDirections;
-import com.example.drfinder.model.PopularDoctor;
+import com.example.drfinder.model.Doctor;
 import com.example.drfinder.viewmodel.DoctorActivityViewModel;
 
 public class DoctorActivity extends AppCompatActivity implements View.OnClickListener {
@@ -35,7 +32,7 @@ public class DoctorActivity extends AppCompatActivity implements View.OnClickLis
         binding.backIcon.setOnClickListener(this);
     }
     public class DoctorActivityEventListener {
-        public void goToAppointmentActivity(View view,PopularDoctor model) {
+        public void goToAppointmentActivity(View view, Doctor model) {
             Intent intent = new Intent(DoctorActivity.this,AppointmentActivity.class);
             intent.putExtra("id",model.getId());
             startActivity(intent);

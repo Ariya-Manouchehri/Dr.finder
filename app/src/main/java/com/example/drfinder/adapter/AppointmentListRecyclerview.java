@@ -1,7 +1,6 @@
 package com.example.drfinder.adapter;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -10,9 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.drfinder.R;
 import com.example.drfinder.databinding.ItemAppointmentListBinding;
-import com.example.drfinder.databinding.ItemDoctorListRecyclerviewBinding;
 import com.example.drfinder.model.Appointment;
-import com.example.drfinder.model.PopularDoctor;
 
 import java.util.ArrayList;
 

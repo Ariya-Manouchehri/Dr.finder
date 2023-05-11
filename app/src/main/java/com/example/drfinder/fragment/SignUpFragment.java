@@ -67,6 +67,9 @@ public class SignUpFragment extends Fragment {
                         case -2:
                             Toast.makeText(getActivity(), "رمز عبور با تکرار رمز برابر نیست.", Toast.LENGTH_SHORT).show();
                             break;
+                        case -3:
+                            Toast.makeText(getActivity(), "کاربری با این مشخصات وجود دارد لطفا نام دیگری را انتخاب کنید.", Toast.LENGTH_SHORT).show();
+                            break;
                         case 1:
                             Intent intent = new Intent(getActivity(), DetailsActivity.class);
                             intent.putExtra("username",binding.inputUsername.getText().toString());

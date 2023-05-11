@@ -9,10 +9,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.drfinder.R;
-import com.example.drfinder.activity.AppointmentActivity;
-import com.example.drfinder.databinding.ItemDoctorListRecyclerviewBinding;
 import com.example.drfinder.databinding.ItemWorkingHoursBinding;
-import com.example.drfinder.model.PopularDoctor;
 import com.example.drfinder.model.WorkingHours;
 
 import java.util.ArrayList;

@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.drfinder.R;
 import com.example.drfinder.databinding.ItemSearchByDoctorNameBinding;
-import com.example.drfinder.model.PopularDoctor;
+import com.example.drfinder.model.Doctor;
 
 import java.util.ArrayList;
 
 public class SearchByDoctorRecyclerview extends RecyclerView.Adapter<SearchByDoctorRecyclerview.Holder> {
-    ArrayList<PopularDoctor> popularDoctorArrayList = new ArrayList<>();
+    ArrayList<Doctor> popularDoctorArrayList = new ArrayList<>();
     SearchByDoctorRecyclerview.setOnClickListener listener;
 
     @NonNull
@@ -57,7 +57,7 @@ public class SearchByDoctorRecyclerview extends RecyclerView.Adapter<SearchByDoc
         void setOnCLickListener(int id);
     }
 
-    public void setDoctorListArrayList(ArrayList<PopularDoctor> popularDoctorArrayList) {
+    public void setDoctorListArrayList(ArrayList<Doctor> popularDoctorArrayList) {
         this.popularDoctorArrayList = popularDoctorArrayList;
         notifyDataSetChanged();
     }

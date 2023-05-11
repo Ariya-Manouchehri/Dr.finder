@@ -1,11 +1,11 @@
 package com.example.drfinder.model;
 
-public class PopularDoctor {
+public class Doctor {
     private int id, card_background_doctor, img_doctor;
     private String name_doctor, job_doctor;
     private float rating;
 
-    public PopularDoctor(int id, int card_background_doctor, int img_doctor, String name_doctor, String job_doctor, float rating) {
+    public Doctor(int id, int card_background_doctor, int img_doctor, String name_doctor, String job_doctor, float rating) {
         this.id = id;
         this.card_background_doctor = card_background_doctor;
         this.img_doctor = img_doctor;

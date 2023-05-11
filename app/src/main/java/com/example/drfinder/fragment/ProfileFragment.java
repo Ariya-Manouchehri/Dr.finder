@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import com.example.drfinder.R;
 import com.example.drfinder.adapter.PopularDoctorRecyclerview;
 import com.example.drfinder.databinding.FragmentProfileBinding;
-import com.example.drfinder.model.PopularDoctor;
+import com.example.drfinder.model.Doctor;
 import com.example.drfinder.viewmodel.HomeViewModel;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class ProfileFragment extends Fragment {
 
     HomeViewModel viewModel;
     PopularDoctorRecyclerview popularDoctorAdapter = new PopularDoctorRecyclerview();
-    ArrayList<PopularDoctor> popularDoctorArrayList = new ArrayList<>();
+    ArrayList<Doctor> popularDoctorArrayList = new ArrayList<>();
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -49,7 +49,7 @@ public class ProfileFragment extends Fragment {
         binding.setListener(listener);
 
         viewModel.getPopularDoctor().observe(getViewLifecycleOwner(), popularDoctors -> {
-            popularDoctorArrayList = (ArrayList<PopularDoctor>) popularDoctors;
+            popularDoctorArrayList = (ArrayList<Doctor>) popularDoctors;
             popularDoctorAdapter.setPopularDoctorArrayList(popularDoctorArrayList);
             binding.profileRecyclerView.setAdapter(popularDoctorAdapter);
             binding.profileRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));

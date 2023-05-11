@@ -10,9 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.drfinder.R;
 import com.example.drfinder.databinding.ItemOurdoctorRecyclerviewBinding;
-import com.example.drfinder.databinding.ItemPopulardoctorRecyclerviewBinding;
 import com.example.drfinder.model.OurDoctor;
-import com.example.drfinder.model.PopularDoctor;
 
 import java.util.ArrayList;
 

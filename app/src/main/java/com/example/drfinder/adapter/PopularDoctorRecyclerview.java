@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.drfinder.R;
 import com.example.drfinder.databinding.ItemPopulardoctorRecyclerviewBinding;
-import com.example.drfinder.model.PopularDoctor;
+import com.example.drfinder.model.Doctor;
 
 import java.util.ArrayList;
 
 public class PopularDoctorRecyclerview extends RecyclerView.Adapter<PopularDoctorRecyclerview.Holder> {
-    ArrayList<PopularDoctor> popularDoctorArrayList = new ArrayList<>();
+    ArrayList<Doctor> popularDoctorArrayList = new ArrayList<>();
     PopularDoctorRecyclerview.setOnClickListener listener;
 
     @NonNull
@@ -57,7 +57,7 @@ public class PopularDoctorRecyclerview extends RecyclerView.Adapter<PopularDocto
         void setOnCLickListener(int id);
     }
 
-    public void setPopularDoctorArrayList(ArrayList<PopularDoctor> popularDoctorArrayList) {
+    public void setPopularDoctorArrayList(ArrayList<Doctor> popularDoctorArrayList) {
         this.popularDoctorArrayList = popularDoctorArrayList;
         notifyDataSetChanged();
     }

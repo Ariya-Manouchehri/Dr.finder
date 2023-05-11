@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.drfinder.model.Appointment;
-import com.example.drfinder.model.PopularDoctor;
 import com.example.drfinder.utils.Repository;
 
 import java.util.List;

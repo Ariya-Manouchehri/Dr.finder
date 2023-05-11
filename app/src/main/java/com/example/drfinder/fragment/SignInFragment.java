@@ -64,6 +64,9 @@ public class SignInFragment extends Fragment {
                         case 0:
                             Toast.makeText(getActivity(), "لطفا رمز عبور خود را به صورت صحیح وارد کنید.", Toast.LENGTH_SHORT).show();
                             break;
+                        case -2:
+                            Toast.makeText(getActivity(), "کاربری یافت نشد.", Toast.LENGTH_SHORT).show();
+                            break;
                         case 1:
                             Intent intent = new Intent(getActivity(), DetailsActivity.class);
                             intent.putExtra("username",binding.inputUsername.getText().toString());

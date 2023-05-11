@@ -2,13 +2,10 @@ package com.example.drfinder.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -18,11 +15,10 @@ import com.example.drfinder.adapter.ScheduleRecyclerview;
 import com.example.drfinder.adapter.WorkingHoursRecyclerview;
 import com.example.drfinder.databinding.ActivityAppointmentBinding;
 import com.example.drfinder.model.Appointment;
-import com.example.drfinder.model.PopularDoctor;
+import com.example.drfinder.model.Doctor;
 import com.example.drfinder.model.Schedules;
 import com.example.drfinder.model.WorkingHours;
 import com.example.drfinder.viewmodel.DoctorActivityViewModel;
-import com.example.drfinder.viewmodel.SignUpSignInViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,7 +91,7 @@ public class AppointmentActivity extends AppCompatActivity implements View.OnCli
     }
 
     public class AppointmentActivityEventListener {
-        public void BookAnAppointment(View view, DoctorActivityViewModel viewModel, PopularDoctor model){
+        public void BookAnAppointment(View view, DoctorActivityViewModel viewModel, Doctor model){
             viewModel.setDoctorForUser(new Appointment(scheduleTime,workingHours,model)).observe(AppointmentActivity.this, new Observer<Integer>() {
                 @Override
                 public void onChanged(Integer integer) {

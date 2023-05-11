@@ -15,8 +15,8 @@ import com.example.drfinder.R;
 import com.example.drfinder.adapter.DoctorListRecyclerview;
 import com.example.drfinder.adapter.JobSideRecyclerview;
 import com.example.drfinder.databinding.ActivityDoctorListBinding;
+import com.example.drfinder.model.Doctor;
 import com.example.drfinder.model.JobSide;
-import com.example.drfinder.model.PopularDoctor;
 import com.example.drfinder.viewmodel.DoctorListActivityViewModel;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class DoctorListActivity extends AppCompatActivity implements DoctorListR
     DoctorListActivityViewModel viewModel;
 
     DoctorListRecyclerview doctorListAdapter = new DoctorListRecyclerview();
-    ArrayList<PopularDoctor> popularDoctorArrayList = new ArrayList<>();
+    ArrayList<Doctor> popularDoctorArrayList = new ArrayList<>();
 
     JobSideRecyclerview jobSideAdapter = new JobSideRecyclerview();
     ArrayList<JobSide> jobSideArrayList = new ArrayList<>();
@@ -59,10 +59,10 @@ public class DoctorListActivity extends AppCompatActivity implements DoctorListR
     }
 
     private void getDoctor() {
-        viewModel.getFilterDoctor("All").observe(this, new Observer<List<PopularDoctor>>() {
+        viewModel.getFilterDoctor("All").observe(this, new Observer<List<Doctor>>() {
             @Override
-            public void onChanged(List<PopularDoctor> popularDoctors) {
-                popularDoctorArrayList = (ArrayList<PopularDoctor>) popularDoctors;
+            public void onChanged(List<Doctor> popularDoctors) {
+                popularDoctorArrayList = (ArrayList<Doctor>) popularDoctors;
                 doctorListAdapter.setDoctorListArrayList(popularDoctorArrayList);
                 binding.popularDoctorRecyclerview.setAdapter(doctorListAdapter);
                 binding.popularDoctorRecyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
@@ -79,10 +79,10 @@ public class DoctorListActivity extends AppCompatActivity implements DoctorListR
 
     @Override
     public void setOnCLickListener(String jobSide) {
-        viewModel.getFilterDoctor(jobSide).observe(this, new Observer<List<PopularDoctor>>() {
+        viewModel.getFilterDoctor(jobSide).observe(this, new Observer<List<Doctor>>() {
             @Override
-            public void onChanged(List<PopularDoctor> popularDoctors) {
-                popularDoctorArrayList = (ArrayList<PopularDoctor>) popularDoctors;
+            public void onChanged(List<Doctor> popularDoctors) {
+                popularDoctorArrayList = (ArrayList<Doctor>) popularDoctors;
                 doctorListAdapter.setDoctorListArrayList(popularDoctorArrayList);
                 binding.popularDoctorRecyclerview.setAdapter(doctorListAdapter);
                 binding.popularDoctorRecyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
