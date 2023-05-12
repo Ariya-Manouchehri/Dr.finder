@@ -68,6 +68,7 @@ public class SignInFragment extends Fragment {
                             Toast.makeText(getActivity(), "کاربری یافت نشد.", Toast.LENGTH_SHORT).show();
                             break;
                         case 1:
+                            Toast.makeText(getActivity(), "به دکتر یاب خوش امدید :)", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getActivity(), DetailsActivity.class);
                             intent.putExtra("username",binding.inputUsername.getText().toString());
                             intent.putExtra("password",binding.inputPassword.getText().toString());

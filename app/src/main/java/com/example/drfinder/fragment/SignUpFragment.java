@@ -71,6 +71,8 @@ public class SignUpFragment extends Fragment {
                             Toast.makeText(getActivity(), "کاربری با این مشخصات وجود دارد لطفا نام دیگری را انتخاب کنید.", Toast.LENGTH_SHORT).show();
                             break;
                         case 1:
+                            Toast.makeText(getActivity(), "ثبت نام شما با موفقیت انجام شد.", Toast.LENGTH_SHORT).show();
+
                             Intent intent = new Intent(getActivity(), DetailsActivity.class);
                             intent.putExtra("username",binding.inputUsername.getText().toString());
                             intent.putExtra("password",binding.inputPassword.getText().toString());
