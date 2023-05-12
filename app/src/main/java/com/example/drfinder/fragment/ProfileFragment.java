@@ -60,5 +60,8 @@ public class ProfileFragment extends Fragment {
         public void appointmentBtn(View view){
             Navigation.findNavController(view).navigate(ProfileFragmentDirections.actionProfileFragmentToAppointmentListFragment());
         }
+        public void commentsForDoctorBtn(View view){
+            Navigation.findNavController(view).navigate(ProfileFragmentDirections.actionProfileFragmentToCommentForDoctorFragment());
+        }
     }
 }
