@@ -19,21 +19,21 @@ public class Doctors {
     }
     public Doctors(){
         doctorArrayList.add(new Doctor(1, Color.parseColor("#FEF5EB"), R.drawable.doctor1, "Dr.Sanaz Frozanfar", "Neurosurgery", 4.8f));
-        doctorArrayList.add(new Doctor(2, Color.parseColor("#FEF5EB"), R.drawable.doctor2, "Dr.Ahmad Ahmadian", "Gastroenterology", 3.8f));
+        doctorArrayList.add(new Doctor(2, Color.parseColor("#EFEFFB"), R.drawable.doctor2, "Dr.Ahmad Ahmadian", "Gastroenterology", 3.8f));
         doctorArrayList.add(new Doctor(3, Color.parseColor("#FEF5EB"), R.drawable.doctor3, "Dr.Mahdi Moghadam", "Gastroenterology", 5.8f));
-        doctorArrayList.add(new Doctor(4, Color.parseColor("#FEF5EB"), R.drawable.doctor4, "Dr.Saba Nazari", "physiotherapy", 9.8f));
-        doctorArrayList.add(new Doctor(5, Color.parseColor("#EFEFFB"), R.drawable.doctor5, "Dr.Mohammad Fazli", "Cardiology", 5.5f));
-        doctorArrayList.add(new Doctor(6, Color.parseColor("#FEF5EB"), R.drawable.doctor6, "Dr.Mostafa Rezaei", "Dentist", 8.7f));
-        doctorArrayList.add(new Doctor(7, Color.parseColor("#EFEFFB"), R.drawable.doctor7, "Dr.Ariya Manouchehri", "Dentist", 8.2f));
-        doctorArrayList.add(new Doctor(8, Color.parseColor("#FEF5EB"), R.drawable.doctor8, "Dr.Javad javadi", "Ophthalmology", 7.5f));
-        doctorArrayList.add(new Doctor(9, Color.parseColor("#FEF5EB"), R.drawable.doctor9, "Dr.Shamim Tabatabayian", "Dentist", 8.5f));
-        doctorArrayList.add(new Doctor(10, Color.parseColor("#EFEFFB"), R.drawable.doctor10, "Dr.Reza Mohammadi", "Neurosurgery", 7.2f));
+        doctorArrayList.add(new Doctor(4, Color.parseColor("#EFEFFB"), R.drawable.doctor4, "Dr.Saba Nazari", "physiotherapy", 6.8f));
+        doctorArrayList.add(new Doctor(5, Color.parseColor("#FEF5EB"), R.drawable.doctor5, "Dr.Mohammad Fazli", "Cardiology", 5.5f));
+        doctorArrayList.add(new Doctor(6, Color.parseColor("#EFEFFB"), R.drawable.doctor6, "Dr.Mostafa Rezaei", "Dentist", 7.1f));
+        doctorArrayList.add(new Doctor(7, Color.parseColor("#FEF5EB"), R.drawable.doctor7, "Dr.Ariya Manouchehri", "Dentist", 6.2f));
+        doctorArrayList.add(new Doctor(8, Color.parseColor("#EFEFFB"), R.drawable.doctor8, "Dr.Javad javadi", "Ophthalmology", 7.5f));
+        doctorArrayList.add(new Doctor(9, Color.parseColor("#FEF5EB"), R.drawable.doctor9, "Dr.Shamim tabatabayian", "Dentist", 8.5f));
+        doctorArrayList.add(new Doctor(10, Color.parseColor("#EFEFFB"), R.drawable.doctor10, "Dr.Reza Mohammadi", "Neurosurgery", 7.5f));
         doctorArrayList.add(new Doctor(11, Color.parseColor("#FEF5EB"), R.drawable.doctor11, "Dr.Sara Ashkani", "Midwifery", 7.8f));
-        doctorArrayList.add(new Doctor(12, Color.parseColor("#EFEFFB"), R.drawable.doctor12, "Dr.Maryam Shahbazi", "Ophthalmology", 6.8f));
-        doctorArrayList.add(new Doctor(13, Color.parseColor("#FEF5EB"), R.drawable.doctor13, "Dr.Masome Heydari", "Radiologie", 6.5f));
-        doctorArrayList.add(new Doctor(14, Color.parseColor("#FEF5EB"), R.drawable.doctor14, "Dr.Komail Moghadasi", "physiotherapy", 6.5f));
+        doctorArrayList.add(new Doctor(12, Color.parseColor("#EFEFFB"), R.drawable.doctor12, "Dr.Maryam Shahbazi", "Ophthalmology", 7.8f));
+        doctorArrayList.add(new Doctor(13, Color.parseColor("#FEF5EB"), R.drawable.doctor13, "Dr.Masome Heydari", "Radiologie", 7.6f));
+        doctorArrayList.add(new Doctor(14, Color.parseColor("#EFEFFB"), R.drawable.doctor14, "Dr.Komail Moghadasi", "physiotherapy", 6.5f));
         doctorArrayList.add(new Doctor(15, Color.parseColor("#FEF5EB"), R.drawable.doctor15, "Dr.Sara Bahrami", "physiotherapy", 4.3f));
-        doctorArrayList.add(new Doctor(16, Color.parseColor("#FEF5EB"), R.drawable.doctor16, "Dr.Reza Asadipour", "Neurosurgery", 4f));
+        doctorArrayList.add(new Doctor(16, Color.parseColor("#EFEFFB"), R.drawable.doctor16, "Dr.Reza Asadipour", "Neurosurgery", 4f));
     }
 
     public ArrayList<Doctor> getPopularDoctor() {

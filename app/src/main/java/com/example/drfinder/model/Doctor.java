@@ -4,6 +4,7 @@ public class Doctor {
     private int id, card_background_doctor, img_doctor;
     private String name_doctor, job_doctor;
     private float rating;
+    private String stringRat;
 
     public Doctor(int id, int card_background_doctor, int img_doctor, String name_doctor, String job_doctor, float rating) {
         this.id = id;
@@ -12,6 +13,7 @@ public class Doctor {
         this.name_doctor = name_doctor;
         this.job_doctor = job_doctor;
         this.rating = rating;
+        this.stringRat = String.valueOf(rating);
     }
 
     public int getId() {
@@ -60,5 +62,13 @@ public class Doctor {
 
     public void setRating(float rating) {
         this.rating = rating;
+    }
+
+    public String getStringRat() {
+        return stringRat;
+    }
+
+    public void setStringRat(String stringRat) {
+        this.stringRat = stringRat;
     }
 }

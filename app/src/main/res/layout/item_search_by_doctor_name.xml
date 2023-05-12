@@ -75,12 +75,12 @@
                         style="@style/Widget.AppCompat.RatingBar.Small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:rating="3.5"
+                        android:rating="@{(model.rating/2)}"
                         android:progressTint="#FDD835" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="7"
+                        android:text="@{model.stringRat}"
                         android:layout_marginLeft="20dp"
                         android:textColor="#A6A6A6"/>
                 </LinearLayout>

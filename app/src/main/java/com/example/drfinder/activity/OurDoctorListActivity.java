@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.drfinder.R;
@@ -17,7 +18,7 @@ import com.example.drfinder.viewmodel.OurDoctorListActivityViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OurDoctorListActivity extends AppCompatActivity {
+public class OurDoctorListActivity extends AppCompatActivity implements DoctorListRecyclerview.setOnClickListener {
     ActivityOurDoctorListBinding binding;
     OurDoctorListActivityViewModel viewModel;
 
@@ -40,5 +41,13 @@ public class OurDoctorListActivity extends AppCompatActivity {
             }
         });
 
+        doctorListAdapter.setOnItemCLickListener(this);
+    }
+
+    @Override
+    public void setOnCLickListener(int id) {
+        Intent intent = new Intent(OurDoctorListActivity.this , DoctorActivity.class);
+        intent.putExtra("id",id);
+        startActivity(intent);
     }
 }
