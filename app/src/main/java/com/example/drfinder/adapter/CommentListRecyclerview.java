@@ -52,7 +52,7 @@ public class CommentListRecyclerview extends RecyclerView.Adapter<CommentListRec
                         binding.textInputLayout.setVisibility(View.VISIBLE);
                         binding.submit.setVisibility(View.VISIBLE);
                         binding.rating.setVisibility(View.VISIBLE);
-                    }else {
+                    } else {
                         binding.arrow.setBackgroundResource(R.drawable.ic_baseline_keyboard_arrow_down_24);
                         binding.textInputLayout.setVisibility(View.GONE);
                         binding.submit.setVisibility(View.GONE);
@@ -60,11 +60,19 @@ public class CommentListRecyclerview extends RecyclerView.Adapter<CommentListRec
                     }
                 }
             });
+            binding.submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null && RecyclerView.NO_POSITION != getAdapterPosition()) {
+                        listener.setOnCLickListener(appointmentArrayList.get(getAdapterPosition()).getDoctor().getId(), binding.comment.getText().toString(), binding.rating.getRating());
+                    }
+                }
+            });
         }
     }
 
     public interface setOnClickListener {
-        void setOnCLickListener(int id);
+        void setOnCLickListener(int doctorId, String comment, float rating);
     }
 
     public void setAppointmentArrayList(ArrayList<Appointment> appointmentArrayList) {

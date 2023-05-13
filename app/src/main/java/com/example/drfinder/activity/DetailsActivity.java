@@ -3,6 +3,7 @@ package com.example.drfinder.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -16,12 +17,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class DetailsActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     ActivityDetailsBinding binding;
     NavController navController;
+    Bundle bundle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_details);
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
         navController = navHostFragment.getNavController();
+        bundle = new Bundle();
+        bundle.putString("username",getIntent().getStringExtra("username"));
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
@@ -39,7 +43,7 @@ public class DetailsActivity extends AppCompatActivity implements BottomNavigati
                 break;
             case R.id.item_profile:
                 navController.popBackStack();
-                navController.navigate(R.id.profileFragment);
+                navController.navigate(R.id.profileFragment,bundle);
                 break;
         }
         return true;

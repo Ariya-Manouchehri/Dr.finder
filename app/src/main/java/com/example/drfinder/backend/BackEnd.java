@@ -4,6 +4,7 @@ import android.graphics.Color;
 
 import com.example.drfinder.R;
 import com.example.drfinder.model.Appointment;
+import com.example.drfinder.model.Comment;
 import com.example.drfinder.model.Doctor;
 import com.example.drfinder.model.HomeViewPager;
 import com.example.drfinder.model.JobSide;
@@ -100,6 +101,12 @@ public class BackEnd {
 
     public List<Appointment> getAppointmentList() {
         return DoctorForUser;
+    }
 
+    public Integer setCommentForDoctor(int doctorId ,String comment , String username,float rating) {
+        return ListOfComment.getInstance().addCommentForDoctor(new Comment(doctorId , comment,username,rating));
+    }
+    public List<Comment> getDoctorComment(int id) {
+        return ListOfComment.getInstance().getDoctorComment(id);
     }
 }

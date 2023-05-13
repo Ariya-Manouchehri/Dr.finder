@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.drfinder.model.Appointment;
+import com.example.drfinder.model.Comment;
 import com.example.drfinder.model.Doctor;
 import com.example.drfinder.model.Schedules;
 import com.example.drfinder.model.WorkingHours;
@@ -27,5 +28,9 @@ public class DoctorActivityViewModel extends ViewModel {
 
     public LiveData<Integer> setDoctorForUser(Appointment appointment){
         return Repository.getInstance().setDoctorForUser(appointment);
+    }
+
+    public LiveData<List<Comment>> getDoctorComment(int id){
+        return Repository.getInstance().getDoctorComment(id);
     }
 }
